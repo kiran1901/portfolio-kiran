@@ -7,33 +7,52 @@
 //     	});
 // });
 
+// CI/CD Tools Jenkins
+// Code Quality Tools SonarQube
+// Issue Tracking and Project Management Tools Jira, Confluence
+// API Testing Tools Swagger, Postman
+// Cloud Platforms Google Cloud Platform (GCP)
+// Logging and Analytics Stack ELK Stack (Elastic-search, Logstash, Kibana) Others Leadership, Fast Learner, Debugging
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
 	debugger 
     // Skills looper starts here
     let languages = ['HTML', 'CSS', 'Javascript', 'Java', 'C', 'Embedded C', 'Arduino'];
     let frameworks = ['Vue.js', 'React', 'Bootstrap', 'Node.js', 'Element UI', 'Bulma'];
-    // let Version Control and Systems = [Git, GitHub, BitBucket, GitLab, Stash]
-    let appContainer = document.getElementById('languages-looper');
+    let versionControlandSystems = ['Git', 'GitHub', 'BitBucket', 'GitLab', 'Stash']
+    let ides = ['Visual Studio Code', 'IntelliJ IDEA', 'Figma']
 
-    languages.forEach(function(item, index) {
-        let colDiv = document.createElement('div');
-        colDiv.className = 'col-sm-6 col-md-4';
+    function generateElements(items, containerId) {
+    let container = document.getElementById(containerId);
 
-        let thumbnailDiv = document.createElement('div');
-        thumbnailDiv.className = 'thumbnail';
+    items.forEach(function(item, index) {
+            let colDiv = document.createElement('div');
+            colDiv.className = 'col-sm-6 col-md-4';
 
-        let captionDiv = document.createElement('div');
-        captionDiv.className = 'caption';
+            let thumbnailDiv = document.createElement('div');
+            thumbnailDiv.className = 'thumbnail';
 
-        let h4Element = document.createElement('h4');
-        h4Element.textContent = item;
+            let captionDiv = document.createElement('div');
+            captionDiv.className = 'caption';
 
-        captionDiv.appendChild(h4Element);
-        thumbnailDiv.appendChild(captionDiv);
-        colDiv.appendChild(thumbnailDiv);
+            let h4Element = document.createElement('h4');
+            h4Element.textContent = item;
 
-        appContainer.appendChild(colDiv);
-    });
+            captionDiv.appendChild(h4Element);
+            thumbnailDiv.appendChild(captionDiv);
+            colDiv.appendChild(thumbnailDiv);
+
+            container.appendChild(colDiv);
+        });
+    }
+
+    generateElements(languages, 'languages-looper');
+    generateElements(frameworks, 'frameworks-looper');
+    generateElements(versionControlandSystems, 'vcs-looper');
+    generateElements(ides, 'ides-looper');
 
     // Skills looper ends here
 
